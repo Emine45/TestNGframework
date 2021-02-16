@@ -33,11 +33,26 @@ public class ActionsClass2 {
         Thread.sleep(3000);
 //        Then verify the page title contains “Your Account”
         //Locating the element of Your Account
-        WebElement account= Driver.getDriver().findElement(By.linkText("Your Account"));
+        WebElement account= Driver.getDriver().findElement(By.linkText("Account"));
+        Thread.sleep(3000);
         account.click();
         //Verifying your Account page title
         String actualPageTitle=Driver.getDriver().getTitle();
         String expectedTitle="Your Account";
         Assert.assertTrue(actualPageTitle.contains(expectedTitle));
+    }
+
+    //HOMEWORK
+    @Test
+    public void imageTest() {
+
+        Driver.getDriver().get("https://www.amazon.com/");
+        WebElement tryPrime=Driver.getDriver().findElement(By.id("nav-link-prime"));
+
+        ReusableMethods.hover(tryPrime);
+
+        WebElement primeImage=Driver.getDriver().findElement(By.xpath("//img[@src='https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/JoyDelivered/prime_logo_RGB_PRIME_OAT._CB439327201_.png']"));
+        primeImage.isDisplayed();
+
     }
 }

@@ -16,14 +16,14 @@ public class ActionsClass3 extends TestBase {
 
     @Test
     public void keysUpDown() throws InterruptedException {
-     //Go to google
-     driver.get("https://www.google.com/");
+        //Go to google
+        driver.get("https://www.google.com/");
         WebElement searchBox = driver.findElement(By.name("q"));
         Actions actions = new Actions(driver);
-        actions
-                .keyDown(searchBox, Keys.SHIFT).  //Pressing shift on the search box element
+        actions.
+                keyDown(searchBox, Keys.SHIFT).  //Pressing shift on the search box element
                 sendKeys("iPhone X prices").  //typing in the box
-                keyUp(searchBox,Keys.SHIFT).  //We have to un press from the shift button
+                keyUp(searchBox, Keys.SHIFT).  //We have to un press from the shift button
                 perform();  //performing the action
         Thread.sleep(8000);
     }
@@ -34,10 +34,10 @@ public class ActionsClass3 extends TestBase {
         driver.get("https://www.amazon.com/");
         WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
         Actions actions = new Actions(driver);
-        actions
-                .keyDown(searchBox, Keys.SHIFT).  //Pressing shift on the search box element
+        actions.
+                keyDown(searchBox, Keys.SHIFT).  //Pressing shift on the search box element
                 sendKeys("iPhone X prices").  //typing in the box
-                keyUp(searchBox,Keys.SHIFT).  //We have to un press from the shift button
+                keyUp(searchBox, Keys.SHIFT).  //We have to un press from the shift button
                 perform();  //performing the action
         Thread.sleep(8000);
     }
